@@ -8,9 +8,11 @@ const CardWanted = ({ pirate }) => {
     const { arrestPirate } = useContext(CapturedPiratesContext)
 
     const handleClick = () => {
-        const freedom = false
-        changePirateFreedom(pirate.id, freedom)
-        arrestPirate(pirate)
+        if (pirate.isFree) {
+            const freedom = false
+            changePirateFreedom(pirate.id, freedom)
+            arrestPirate(pirate)
+        }
     }
 
     return (
