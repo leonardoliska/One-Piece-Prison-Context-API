@@ -1,15 +1,13 @@
 import CardPrisoner from "../CardPrisoner"
 import { Container } from "./styles"
 import { useContext } from "react"
-import { PiratesContext } from "../../providers/piratesList"
+import { CapturedPiratesContext } from "../../providers/capturedPiratesList"
 
 export const Prisoners = () => {
-    const { piratesList } = useContext(PiratesContext)
-
-    const prisonersList = piratesList.filter((pirate) => !pirate.isFree)
+    const { capturedPiratesList } = useContext(CapturedPiratesContext)
 
     const totalReward = new Intl.NumberFormat("de-DE").format(
-        prisonersList.reduce((total, current) => total + current.reward, 0)
+        capturedPiratesList.reduce((total, current) => total + current.reward, 0)
     )
 
     return (
@@ -20,7 +18,7 @@ export const Prisoners = () => {
             </aside>
             <div />
             <main>
-                {prisonersList.map((pirate) => (
+                {capturedPiratesList.map((pirate) => (
                     <CardPrisoner key={pirate.id} pirate={pirate} />
                 ))}
             </main>

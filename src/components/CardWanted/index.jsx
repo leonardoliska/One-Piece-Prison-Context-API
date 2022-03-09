@@ -1,11 +1,17 @@
 import Container from "./styles"
 import { useContext } from "react"
-import { PiratesContext } from "../../providers/piratesList"
+import { CapturedPiratesContext } from "../../providers/capturedPiratesList"
+import { WantedPiratesContext } from "../../providers/wantedPiratesList"
 
 const CardWanted = ({ pirate }) => {
-    const { handlePirateFreedom } = useContext(PiratesContext)
+    const { changePirateFreedom } = useContext(WantedPiratesContext)
+    const { arrestPirate } = useContext(CapturedPiratesContext)
 
-    const handleClick = () => handlePirateFreedom(pirate.id, false)
+    const handleClick = () => {
+        const freedom = false
+        changePirateFreedom(pirate.id, freedom)
+        arrestPirate(pirate)
+    }
 
     return (
         <Container isFree={pirate.isFree} onClick={handleClick}>

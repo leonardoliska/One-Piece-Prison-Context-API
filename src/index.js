@@ -4,16 +4,19 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter } from "react-router-dom"
 import GlobalStyle from "./styles/GlobalStyle"
-import { PiratesProvider } from "./providers/piratesList"
+import { WantedPiratesProvider } from "./providers/wantedPiratesList"
+import { CapturedPiratesProvider } from "./providers/capturedPiratesList"
 
 ReactDOM.render(
     <React.StrictMode>
-        <PiratesProvider>
-            <BrowserRouter>
-                <GlobalStyle />
-                <App />
-            </BrowserRouter>
-        </PiratesProvider>
+        <WantedPiratesProvider>
+            <CapturedPiratesProvider>
+                <BrowserRouter>
+                    <GlobalStyle />
+                    <App />
+                </BrowserRouter>
+            </CapturedPiratesProvider>
+        </WantedPiratesProvider>
     </React.StrictMode>,
     document.getElementById("root")
 )

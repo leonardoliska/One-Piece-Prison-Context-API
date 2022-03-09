@@ -1,14 +1,14 @@
 import Container from "./styles"
 import CardWanted from "../../components/CardWanted"
 import { useContext } from "react"
-import { PiratesContext } from "../../providers/piratesList"
+import { WantedPiratesContext } from "../../providers/wantedPiratesList"
 
 const WantedList = () => {
-    const { piratesList } = useContext(PiratesContext)
+    const { wantedPiratesList } = useContext(WantedPiratesContext)
 
     return (
         <Container>
-            {piratesList.map((pirate) => (
+            {wantedPiratesList.map((pirate) => (
                 <CardWanted key={pirate.id} pirate={pirate} />
             ))}
         </Container>
