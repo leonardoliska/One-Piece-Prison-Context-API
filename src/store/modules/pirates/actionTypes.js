@@ -1,0 +1,1 @@
+export const CHANGE_CAPTURED = "CHANGE_CAPTURED"
