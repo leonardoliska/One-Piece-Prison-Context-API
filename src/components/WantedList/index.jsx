@@ -1,15 +1,15 @@
 import Container from "./styles"
-
-import CardHome from "../../components/CardHome"
-import { useSelector } from "react-redux"
+import CardWanted from "../../components/CardWanted"
+import { useContext } from "react"
+import { PiratesContext } from "../../providers/piratesList"
 
 const WantedList = () => {
-    const { pirates } = useSelector((state) => state)
+    const { piratesList } = useContext(PiratesContext)
 
     return (
         <Container>
-            {pirates.map((pirate) => (
-                <CardHome key={pirate.id} pirate={pirate} />
+            {piratesList.map((pirate) => (
+                <CardWanted key={pirate.id} pirate={pirate} />
             ))}
         </Container>
     )

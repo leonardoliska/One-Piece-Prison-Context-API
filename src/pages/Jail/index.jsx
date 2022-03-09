@@ -1,10 +1,10 @@
-import { Prisoners } from "../../components/Prisoners"
+import { Prisoners } from "../../components/PrisonersList"
 import Header from "../../components/Header"
 
 const Jail = () => {
     return (
         <>
-            <Header url={"/"} />
+            <Header url={"/"} linkName="Voltar" />
             <Prisoners />
         </>
     )

@@ -4,7 +4,7 @@ import Header from "../../components/Header"
 const Home = () => {
     return (
         <>
-            <Header url={"/jail"} />
+            <Header url={"/jail"} linkName="Cadeia" />
             <WantedList />
         </>
     )

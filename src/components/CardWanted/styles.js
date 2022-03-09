@@ -5,8 +5,18 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;
+    cursor: pointer;
+    ${({ isFree }) => !isFree && "{filter: saturate(0)}"}
 
-    ${({ isCaptured }) => isCaptured && "{filter: saturate(0)}"}
+    :hover {
+        button + img {
+            ${({ isFree }) => isFree && "{border: 2px solid #f0c171dd;border-bottom: 0;}"}
+        }
+
+        button {
+            ${({ isFree }) => isFree && "{color: #180f08;background: #f0c171dd;cursor: pointer;}"}
+        }
+    }
 
     img {
         height: 300px;
@@ -15,10 +25,6 @@ const Container = styled.div`
         order: -1;
         border-bottom: 0;
         transition: 0.2s;
-    }
-
-    button:hover + img {
-        ${({ isCaptured }) => !isCaptured && "{border: 2px solid #f0c171dd;border-bottom: 0;}"}
     }
 
     button {
@@ -30,10 +36,6 @@ const Container = styled.div`
         font-size: 18px;
         border-radius: 0 0 8px 8px;
         transition: 0.2s;
-
-        :hover {
-            ${({ isCaptured }) => !isCaptured && "{color: #180f08;background: #f0c171dd;cursor: pointer;}"}
-        }
     }
 `
 

@@ -4,17 +4,16 @@ import App from "./App"
 import reportWebVitals from "./reportWebVitals"
 import { BrowserRouter } from "react-router-dom"
 import GlobalStyle from "./styles/GlobalStyle"
-import { Provider } from "react-redux"
-import store from "./store"
+import { PiratesProvider } from "./providers/piratesList"
 
 ReactDOM.render(
     <React.StrictMode>
-        <Provider store={store}>
+        <PiratesProvider>
             <BrowserRouter>
                 <GlobalStyle />
                 <App />
             </BrowserRouter>
-        </Provider>
+        </PiratesProvider>
     </React.StrictMode>,
     document.getElementById("root")
 )
