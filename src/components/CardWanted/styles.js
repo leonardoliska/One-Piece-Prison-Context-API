@@ -5,8 +5,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     height: auto;
-    cursor: pointer;
-    ${({ isFree }) => !isFree && "{filter: saturate(0)}"}
+    ${({ isFree }) => isFree && "{cursor: pointer;} "}
+    ${({ isFree }) => !isFree && "{filter: saturate(0);} "}
 
     :hover {
         button + img {
