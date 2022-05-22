@@ -13,6 +13,7 @@ Aproveitei a oportunidade do tema livre e criei o design do site baseado em One 
 
 ### Features
 
+- Capturar ou liberar um pirata
 - Gerenciamento de estado com Context-API
 - Local Storage
 
