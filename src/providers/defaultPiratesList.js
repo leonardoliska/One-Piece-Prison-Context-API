@@ -100,7 +100,7 @@ const defaultPiratesList = [
     {
         id: "15",
         img: require("../assets/img/Shanks_Wanted_Poster.png"),
-        name: "Shanks_Wanted_Poster",
+        name: "Shanks",
         reward: 40489e5,
         isFree: true,
     },
